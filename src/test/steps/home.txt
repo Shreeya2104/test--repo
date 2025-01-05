@@ -1,0 +1,114 @@
+
+
+
+
+ Feature: User Authentication tests
+ Background: 
+ Given user navigates to the application
+
+
+ @login
+
+ Scenario: Login should be successful
+Given user navigates to the application
+# And Use enters the username as "Admin"
+# And User enters the password as "Admin123"
+When User click roshmi on the login button
+Then Login should run be success
+
+# @login1
+# Scenario: Login should be successful
+# When Use enters the username as "Admin"
+#  And User enters the password as "Admin123"
+# Then Login should run be successful
+
+@login2
+
+Scenario: User requests a password reset
+    Given User navigates to the forgot password page
+    When User enters the username for password reset as "Admin"
+    Then A reset password link should be sent
+    Then A reset password link should be sent
+
+ 
+
+@navigateSection
+
+Scenario: User navigates to a specific section
+    Given I am on the home page
+    When I navigate to the "Admin" section
+    Then I should see the "Admin" section
+
+
+
+@applyLeave
+
+Scenario: User applies for leave
+    Given User is logged in and on the Leave section
+    When User clicks on Apply
+    Then User should see the Apply Leave form
+
+@applyLeave2
+
+Scenario: User applies for leave with details
+    Given User is on the Apply Leave form
+    When User selects leave type and dates
+    And User fills in the reason for leave
+    Then User submits the leave application
+
+    
+@searchLeave
+
+Scenario: User searches for leave applications
+     Given User is on the Leave List page
+     When User selects the leave dates and type
+     And User searches for leave requests
+     Then User should see the leave requests
+
+
+
+  
+
+
+@searchSpecificLeave
+
+Scenario: User searches for leave applications for specific dates
+    Given User is on the Leave List page and selects specific leave dates
+    When User selects leave dates and types, and performs searches for specific dates
+    Then User should see the leave requests for the selected dates
+
+    
+
+    
+    
+
+@searchSpecificLeaveOutline
+
+Scenario Outline: User searches for leave applications for specific dates
+    Given User is on the Leave List page and selects specific leave dates
+    When User performs the search for leave requests
+    Then User should see the leave requests for the selected dates
+
+    Examples:
+        | startDate | endDate   |
+        | 28        | 29        |
+        | 21        | 24        |
+
+@myLeave1
+Scenario: User views My Leave List
+    Given User navigates to the My Leave List page
+    When User interacts with the leave list container
+    Then User should see the leave list container
+
+@socialMediaLinks
+    Scenario: User navigates to social media links
+        Given User navigates to the login page
+        When User clicks on the first link and waits for popup
+        And User clicks on the second link and waits for popup
+        And User clicks on the third link and waits for popup
+        And User clicks on the fourth link and waits for popup
+        Then User should see all popups opened
+    
+
+   
+    
