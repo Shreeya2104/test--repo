@@ -41,7 +41,7 @@ Given('User enters the password as {string}', async function (password) {
     await fixture.page.waitForTimeout(5000);
 })
 
-When('User click roshmi on the login button', async function () {
+When('User click  on the login button', async function () {
     await fixture. page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
   await fixture.page.getByRole('button', { name: 'Login' }).click();
     await fixture.page.waitForLoadState();
