@@ -13,7 +13,7 @@
 Given user navigates to the application
 # And Use enters the username as "Admin"
 # And User enters the password as "Admin123"
-When User click roshmi on the login button
+When User click  on the login button
 Then Login should run be success
 
 # @login1
